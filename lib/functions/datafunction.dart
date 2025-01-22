@@ -78,10 +78,12 @@ void moveToRecycleBin(int index) {
       createdTime: DateTime.now(),
       title: note.title,
       body: note.body,
-      isInRecycleBin: true,
+      isInRecycleBin: true, // Mark the note as in the recycle bin
       textStyle: note.textStyle, // Keep the same text style
     );
+
     notifier.notifyListeners();
+    saveNotesToStorage(); // Save updated notes to storage
   }
 }
 
@@ -95,5 +97,6 @@ void onUpdateNotes(int index, String title, String body, TextStyle textStyle) {
       textStyle: textStyle, // Update the text style
     );
     notifier.notifyListeners();
+    saveNotesToStorage(); // Save updated notes to storage
   }
 }
