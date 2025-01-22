@@ -53,9 +53,7 @@ class NoteView extends HookWidget {
             radius: 20,
             backgroundColor: customColors.primaryColor,
             child: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: () {},
               icon: Icon(
                 Icons.edit_document,
                 color: customColors.secondaryColor,
