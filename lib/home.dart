@@ -31,6 +31,9 @@ class SamsungNoteHomePage extends HookWidget {
           final visibleNotes =
               notesList.where((note) => !note.isInRecycleBin).toList();
           return OneUiNested(
+            onMoveToRecycle: (index) {
+              moveToRecycleBin(index);
+            },
             onUpdateNotes: onUpdateNotes,
             iconButton3: IconButton(
               onPressed: () {},
