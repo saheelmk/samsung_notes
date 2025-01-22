@@ -5,8 +5,11 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("hello im from user 1......."),
+    return Column(
+      children: [
+        Text("hello im from user 1......."),
+        Text("hello here,im completed my project......."),
+      ],
     );
   }
 }
