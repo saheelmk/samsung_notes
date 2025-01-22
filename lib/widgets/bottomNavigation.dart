@@ -16,7 +16,7 @@ class BottomNavigationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30),
+      padding: const EdgeInsets.only(left: 30, top: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -91,8 +91,8 @@ class BottomNavigationWidget extends StatelessWidget {
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    Navigator.pop(context);
                                     onUpdateNotes(index);
+                                    Navigator.pop(context);
                                   },
                                   child: Text(
                                     "Move to Recycle bin",

@@ -21,10 +21,13 @@ class OneUiNested extends HookWidget {
   final Function(int) onNoteDeleted; // Accepting onNoteDeleted callback
   final Function(int, String, String, TextStyle) onUpdateNotes;
   final Function(NoteModel)? onTap;
+  final Function(int) onMoveToRecycle;
+
   // Accepting onNoteDeleted callback
 
   OneUiNested(this.iconButton1, this.iconButton2,
       {super.key,
+      required this.onMoveToRecycle,
       required this.onUpdateNotes,
       required this.menuButton,
       required this.onLongPressed,
@@ -159,6 +162,7 @@ class OneUiNested extends HookWidget {
                           ),
                           itemBuilder: (context, index) {
                             return NoteCardWidget(
+                              onMoveToRecycle: onMoveToRecycle,
                               onTap: onTap,
                               onUpdateNote: onUpdateNotes,
                               note: notes[index],

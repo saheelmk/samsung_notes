@@ -31,6 +31,7 @@ class RecycleWidget extends HookWidget {
               notesList.where((note) => note.isInRecycleBin).toList();
 
           return OneUiNested(
+            onMoveToRecycle: (_) {},
             onTap: (note) {
               Navigator.push(
                   context,

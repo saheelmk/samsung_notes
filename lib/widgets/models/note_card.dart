@@ -14,6 +14,7 @@ class NoteCardWidget extends HookWidget {
     required this.note,
     required this.index,
     required this.onUpdateNote,
+    required this.onMoveToRecycle,
     this.onTap,
   });
 
@@ -22,6 +23,7 @@ class NoteCardWidget extends HookWidget {
   final VoidCallback isIconVisible;
   final Function(int, String, String, TextStyle) onUpdateNote;
   final CustomCallback? onTap;
+  final Function(int) onMoveToRecycle;
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +38,7 @@ class NoteCardWidget extends HookWidget {
                 context,
                 MaterialPageRoute(
                   builder: (BuildContext ctx) => NoteView(
-                    onMoveToRecycle: (index) {
-                      moveToRecycleBin(index);
-                      print("Moved to recycle bin: $index");
-                    },
+                    onMoveToRecycle: onMoveToRecycle,
                     note: note,
                     index: index,
                     onUpdateNote: onUpdateNote,
