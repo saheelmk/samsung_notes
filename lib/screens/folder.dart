@@ -33,6 +33,7 @@ class FolderWidget extends HookWidget {
               notesList.where((note) => !note.isInRecycleBin).toList();
 
           return OneUiNested(
+            onMoveToRecycle: (_) {},
             onUpdateNotes: onUpdateNotes,
             iconButton3: IconButton(
               onPressed: () {},
